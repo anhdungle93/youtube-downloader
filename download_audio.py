@@ -2,11 +2,19 @@
 from pytube import YouTube
 import os
 import subprocess
+import argparse
 
 # %%
-youtube_link = 'https://www.youtube.com/watch?v=ccvq0NR41Vg&list=RDccvq0NR41Vg&start_radio=1&t=1'
+
+parser = argparse.ArgumentParser()
+parser.add_argument('youtube_link', type=str)
+parser.add_argument('filename', type=str)
+parser.add_argument('--output_path', default='/Users/anhdungle/Music')
+args = parser.parse_args()
+#%%
+youtube_link = args.youtube_link
 download_name = 'Kevz - Everything I Wanted (spanish version).mp3'
-audio_output_path = '/Users/anhdungle/Music'
+audio_output_path = args.output_path
 y = YouTube(youtube_link)
 t = y.streams.filter(only_audio=True).all()
 t[0].download(output_path=audio_output_path)
