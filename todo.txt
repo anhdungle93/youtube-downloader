@@ -2,3 +2,4 @@
 2. show progress bar
 3. show file size before downloading
 4. show estimated download time
+5. check that is the correct email
