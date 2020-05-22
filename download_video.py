@@ -13,7 +13,6 @@ parser.add_argument('--output_path', default='/Users/anhdungle/Filme')
 args = parser.parse_args()
 # %%
 youtube_link = args.youtube_link
-download_name = 'Kevz - Everything I Wanted (spanish version).mp3'
 audio_output_path = args.output_path
 y = YouTube(youtube_link)
 t = y.streams.all()
